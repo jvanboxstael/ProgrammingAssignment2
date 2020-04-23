@@ -4,7 +4,7 @@
 ## Function storing a matrix and it's inverse and providing getters and setters.
 
 makeCacheMatrix <- function(m = matrix()) {
-  inverse <<- NULL
+  inverse <- NULL
   setMatrix <- function(nMatrix){
     m <<- nMatrix
     inverse <<- NULL
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(m = matrix()) {
 cacheSolve <- function(x, ...) {
   if(is.null(x$getInverse())){
     message("Cached inverse is empty, calculating iverse")
-    inv <- solve((x$getMatrix()))
+    inv <- solve(x$getMatrix(), ...)
     x$setInverse(sInverse = inv)
 
   } else {
